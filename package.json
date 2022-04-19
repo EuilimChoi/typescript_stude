@@ -1,0 +1,21 @@
+{
+  "name": "typescript_stude",
+  "version": "1.0.0",
+  "description": "타입스크립트 공부용 레포",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "prestart" : "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EuilimChoi/typescript_stude.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EuilimChoi/typescript_stude/issues"
+  },
+  "homepage": "https://github.com/EuilimChoi/typescript_stude#readme"
+}
