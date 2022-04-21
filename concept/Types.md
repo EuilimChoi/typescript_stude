@@ -101,3 +101,14 @@ const ahchoi : Player = {
   age : "32"
 }
 // Player를 type 처럼 사용하면 된다.
+// 또한 함수로 불러서 사용도 가능하다
+
+funtion playermaker(name:string):Player{
+  retrun {
+    name // 그냥 name만 
+  }
+}
+
+const lalala = playermaker("lalala") //works!
+lalala.age = 12 //works!
+```
