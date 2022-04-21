@@ -80,3 +80,24 @@ if(player.age && player.age < 10){
 ```
 
 정도로 지정해서 사용하면 더 완벽하게 오류 없이 사용할 수 있다.
+
+---
+### 4. type preset 정의하기.
+예를 들면 아래와 같이 미리 preset을 만들어서 type을 정의할 수 있다.
+
+```typescript
+type Player = {
+  name : string,
+  age?: number
+}
+// 먼저 선언을 프리셋을 type로 선언한 후
+
+const limchoi : Player = {
+  name : "limchoi"
+}
+
+const ahchoi : Player = {
+  name : "ahchoi",
+  age : "32"
+}
+// Player를 type 처럼 사용하면 된다.
