@@ -1,6 +1,8 @@
 # types
 
 ### 1. 다음과 같이 단순히 변수에 대한 type를 지정하려면 아래와 같이 사용하면 간편하다. 그냥 : 뒤에 원하는 타입을 적어주면됨.
+기본 타입 : Boolean, Number, String, Object, Array, Tuple, Enum, Any, Void, Null, Undefined, Never
+
 
 ```typescript
 let a : number = 1;
