@@ -58,3 +58,45 @@ const Abb : add = (a,b) =>{
 }
 //정상 작동
 ```
+
+# Polymorphism
+- 프로그램 언어의 다형성(多形性, polymorphism; 폴리모피즘)은 그 프로그래밍 언어의 자료형 체계의 성질을 나타내는 것으로, 프로그램 언어의 각 요소들(상수, 변수, 식, 오브젝트, 함수, 메소드 등)이 다양한 자료형(type)에 속하는 것이 허가되는 성질을 가리킨다. 
+- 쉽게 말해 한 함수에 여러가지 call signatures를 집어 넣는건데 그냥 모든 type을 혀용하는 방식이다. (any type이랑은 다르다)
+
+```typescript
+type Printsomething = {
+  (arr : number[]):void
+  (arr : string[]):void
+  (arr : boolean[]):void
+}
+
+const printsomething : Printsomething = (arr) => {
+  arr.forEach(i => console.log(i))
+}
+
+//위 처럼 선언하고 함수 호출시
+printsomething([1,2,3,4,5,6]) // 작동
+printsomething(["foo","bar","cor"]) //작동
+printsomething([1,"foo",ture]) // 작동 안함, number, string, boolean을 섞은 call signatures는 정의 안해줬음!
+```
+
+### 여기서 등장하는 개념이 generic
+- Generic이란 데이터의 타입을 일반화한다(generalize)한다는 것을 뜻한다.
+- Generic은 자료형을 정하지 않고 여러 타입을 사용할 수 있게 해준다.
+- 쉽게 말해서 선언 시점이 아니라 생성 시점에 타입을 명시하여 하나의 타입만이 아닌 다양한 타입을 사용할 수 있도록 하는 기법이다.
+
+```typescript
+type Printsomething = {
+ <T>(arr : T[]):void
+}
+//대부분 "Type"의 "T"를 사용해 generic을 표기한다.
+
+const printsomething : Printsomething = (arr) => {
+  arr.forEach(i => console.log(i))
+}
+
+//위 처럼 선언하고 함수 호출시
+printsomething([1,2,3,4,5,6]) // 작동
+printsomething(["foo","bar","cor"]) //작동
+printsomething([1,"foo",ture]) // 작동 
+```
